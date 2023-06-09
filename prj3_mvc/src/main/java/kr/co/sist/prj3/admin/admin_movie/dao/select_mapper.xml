@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.admin.admin_movie.dao.selectMapper">  
+	<select id="selectMovieList" resultType="md" parameterType="String">
+		select m.m_title, d.d_name, m.genre, m.rank, m.release_date, m.m_reg_date, m.screen_state
+		from movie m
+		join director d on m.m_num = d.m_num
+		<!-- <where>
+			<if test="m_title != null">
+				and m_title = #{m_title}
+			</if>
+		</where> -->
+	</select>
+	
+	<!-- <select id="selectDirector" resultType="dd" parameterType="Integer">
+		select d_name
+		from director
+		where m_title = #{m_title}
+	</select> -->
+</mapper>

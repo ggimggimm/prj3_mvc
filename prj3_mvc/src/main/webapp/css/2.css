@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+.ink_member .cmt_num	{display: inline-block; margin: -2px 0 -2px 2px; padding: 0 5px; border-radius: 8px; font: 11px/14px 'Arial'; vertical-align: middle;}
+
+.mb_header h1	{font-size: 20px;}
+.mb_header .ink_bubble_wrap	{font-size: 14px;}
+.mb_header .ink_bubble_wrap a	{background-color: #FFF; width: 20px; height: 20px; line-height: 22px; border-radius: 10px;}
+.mb_header .sbHolder	{position: absolute; right: 0; top: -5px;}
+.mb_header .sbSelector	{min-width: 150px;}
+
+.mb_buttons	{position: absolute; right: -40px; top: 0; width: 30px; margin-top: 50px; z-index: 10;}
+.mb_buttons>div	{position: fixed; width: 30px; text-align: center;}
+.mb_buttons li	{position: relative; margin-bottom: 10px;}
+.mb_buttons .has_bubble	{display: inline-block; width: 30px; height: 30px; line-height: 32px; border-radius: 50%;}
+
+.mb_set	{display: table; width: 100%; margin-top: 25px; border-radius: 15px;}
+.mb_set::before	{content: ''; position: absolute; left: 33.33%; top: 50%; margin-top: -40px; width: 1px; height: 80px; z-index: 1;}
+.mb_set::after	{content: ''; position: absolute; right: 33.33%; top: 50%; margin-top: -40px; width: 1px; height: 80px; z-index: 1;}
+.mb_set.not_my::before	{left: 50%;}
+.mb_set.not_my::after	{content: none;}
+.mb_set>div	{display: table-cell; width: 33.33%; padding: 20px; box-sizing: border-box; vertical-align: middle;}
+.mb_set.not_my>div	{width: 50%;}
+.mb_set .mb_profile	{height: 120px; padding-left: 115px; box-sizing: border-box; font-size: 18px;}
+.mb_set .mb_level	{padding: 2px 8px; border-radius: 10px; font-size: 11px;}
+.mb_set .inkpf	{width: 80px; height: 80px;}
+.mb_set .mb_point_wrap	{text-align: center; font-size: 16px; font-weight: bold;}
+.mb_set .mb_point_wrap>div	{display: inline-block; margin: 0 10px;}
+.mb_set .point_text	{font-size: 14px; letter-spacing: 0.15em;}
+.mb_set .mb_info_menu	{text-align: right; line-height: 160%;}
+.mb_set .mb_info_menu a	{border-bottom: 1px solid transparent;}
+
+.mb_info_tab	{border-radius: 20px 20px 0 0; font-size: 15px;}
+.mb_info_tab>ul	{display: table; width: 100%; text-align: center;}
+.mb_info_tab>ul>li	{display: table-cell; padding: 17px 0; white-space: nowrap;}
+.mb_info_tab .active a	{font-weight: bold;}
+.mb_info_tab i	{margin-right: 2px;}
+.tab_letter .num_box2	{height: 16px; line-height: 16px; margin-bottom: 1px; vertical-align: middle; color: #FFF;}
+
+.mb_content	{margin-top: 25px; border-radius: 20px; background-color: #FFF;}
+.mb_content .top_bt_area	{padding: 15px 20px;}
+.mb_content .left_side	{float: left;}
+.mb_content .right_side	{float: right;}
+.mb_table	{font-size: 13px;}
+.mb_table th	{width: 150px;}
+
+.mb_list>ul>li	{padding: 20px;}
+.mb_list>ul>li:last-child	{border-bottom: none;}
+.mb_list .title_link	{line-height: 160%;}
+.mb_list .list_info	{font-size: 12px;}
+.mb_list li .bt_delete	{right: 20px; margin-top: -22px;}
+
+.paging	{margin-top: 25px;}
+.paging .bt_page	{font-size: 13px;}
+
+.mb_document>ul	{display: table; width: 100%; border-collapse: collapse;}
+.mb_document>ul>li	{display: table-row;}
+.mb_document .board_name2	{display: table-cell; width: 1%; padding: 20px 0 20px 20px;}
+.mb_document .board_name2 .inner	{width: 100%;}
+.mb_document .list_body	{display: table-cell; padding: 20px;}
+.mb_document .list_vote i	{font-size: 12px;}
+
+.comment_content	{max-width: calc(100% - 60px); transition-property: background-color; transition-duration: 0.3s;}
+.comment_content::after	{transition-property: border-color; transition-duration: 0.3s;}
+.comment_content:hover	{background-color: #fcf8e3;}
+.comment_content:hover::after	{border-top-color: #fcf8e3; border-left-color: #fcf8e3;}
+.comment_content a	{line-height: 160%;}
+.comment_date	{position: absolute; left: 100%; bottom: 0; margin-left: 10px; font-size: 12px; white-space: nowrap;}
+.comment_date .time	{opacity: 0; transition-property: opacity; transition-duration: 0.3s;}
+.comment_content:hover .comment_date .time	{opacity: 1;}
+.comment_vote	{font-size: 11px; line-height: 11px;}
+.document_title	{font-size: 13px;}
+
+.scrap_folder	{padding: 15px 20px;}
+.scrap_folder .ink_dropdown .bt	{min-width: 150px;}
+.scrap_folder .ink_dropdown .fa-folder	{margin-right: 3px;}
+.scrap_folder_ctrl	{display: inline-block; margin-left: 5px;}
+
+.mb_scrapped>ul>li	{padding-right: 90px;}
+.mb_scrapped li.has_thumb	{padding-right: 190px;}
+.mb_scrapped .list_thumb	{right: 90px;}
+.mb_scrapped .list_thumb img	{border-radius: 10px;}
+.mb_scrapped li .sbSelector	{min-width: 120px;}
+
+.mb_saved .list_body	{padding-right: 90px;}
+.mb_saved .list_content .xe_content	{line-height: 160%;}
+.mb_saved .list_content	{margin-top: 20px; padding-top: 10px;;}
+.mb_saved li .bt_delete	{right: 0;}
+
+.mb_message.ink_box	{margin-top: 50px;}
+.mb_message p	{line-height: 160%;}
+
+.is_signup .ink_top,
+.is_signup .ink_header,
+.is_signup .ink_sidebar,
+.is_signup .ink_footer	{display: none;}
+.is_signup .ink_wrapper	{position: relative; width: 800px !important; padding-bottom: 50px; margin: 0 auto; z-index: 2;}
+.is_signup .ink_content	{float: none; width: 100% !important;}
+.is_signup .mb_header	{display: none;}
+.is_signup .mb_signup	{box-shadow: 0 10px 15px rgba(0,0,0,0.1);}
+.is_signup::after	{content: ''; position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1;}
+
+.mb_signup>h3	{padding: 20px 0; border-radius: 20px 20px 0 0; text-align: center;}
+.mb_signup>ul	{display: table; width: 100%; border-collapse: collapse;}
+.mb_signup>ul>li	{display: table-row;}
+.mb_signup .th	{width: 150px; white-space: nowrap; font-weight: bold; vertical-align: middle;}
+.mb_signup .th,
+.mb_signup .td	{display: table-cell; padding: 15px 25px;}
+.mb_signup .td .ii	{max-width: 100%; width: 200px;}
+.mb_signup .help-block	{padding-top: 10px; margin-top: 10px; font-size: 13px;}
+
+.mb_signup .verifySMS {
+	height: 32px !important;
+}
+
+.mb_signup .verifySMS_input_area {
+	margin-top: 5px;
+}
+.mb_signup .verifySMS_input_area input {
+	width:200px; background: #eee;
+	height: 32px; line-height: 32px; font-size: 13px; color: #000;
+	outline: none; border: 0; padding: 0 10px; box-sizing: border-box;
+	border-radius: 5px; margin-right: 4px;
+}
+
+.mb_signup .verifySMS_input_area button {
+	height: 32px !important;
+}
+
+.mb_agreement	{padding: 30px;}
+.mb_agreement>ul>li	{margin-bottom: 25px;}
+.mb_agreement .agreement_title	{font-weight: bold;}
+.mb_agreement .agreement_box .inner	{padding: 20px 25px;}
+.mb_agreement .agreement_box	{height: 200px; line-height: 180%;}
+.mb_agreement .agreement_box .inner:hover	{background-color: #ffffe9;}
+.mb_agreement .agreement_box ol>li	{padding-left: 25px;}
+.mb_agreement .agreement_box ol>li::after	{top: 3px; font: 300 13px "Montserrat"; letter-spacing: 0.15em;}
+
+.mb_login .ex a	{font-size: 13px;}
+.mb_login .keep_msg	{display: none; position: absolute; left: 0; top: 100%; width: 100%; padding: 10px 15px; box-sizing: border-box; line-height: 160%; font-size: 13px; z-index: 2;}
+.mb_login .ink_check:hover + .keep_msg	{display: block;}
+
+.mb_findpass .ink_box .bt_area	{margin-top: 15px;}
+
+.letter_list>ul::after	{content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 100%;}
+.letter_list>ul>li	{display: inline-block; width: 50%; padding: 15px 20px 15px 65px; vertical-align: top;}
+.letter_list>ul>li:nth-child(2)	{border-top: none;}
+.letter_list .letter_check	{right: 20px;}
+.letter_list .inkpf	{position: absolute; left: 20px; top: 15px;}
+.letter_list .nickname	{margin-left: 10px; font-size: 12px;}
+.letter_header .letter_info	{font-size: 13px;}
+.letter_list .state	{font-size: 12px;}
+.letter_list .list_body	{max-width: calc(100% - 55px); border-radius: 10px; line-height: 160%;}
+.letter_date	{position: absolute; left: 100%; bottom: 0; margin-left: 5px; font-size: 11px; white-space: nowrap; line-height: 120%;}
+.letter_date .ink_time	{opacity: 0; transition-property: opacity; transition-duration: 0.3s;}
+.letter_list .list_body:hover .ink_time	{opacity: 1;}
+.ink_message .letter_content .inner	{height: 350px;}
+.letter_content .letter_body	{line-height: 160%;}
+.letter_body a:hover	{border-bottom-color: transparent;}
+.letter_list .list_footer	{padding: 15px 20px;}
+.letter_list .list_footer .bt_right	{right: 20px;} 
+.modify_list .sbHolder	{margin-right: 2px;}
+.message_allow.right_side	{white-space: nowrap;}
+
+.mb_friend .left_side .sbSelector	{min-width: 150px;}
+.mb_friend .letter_list .list_wrap	{ padding: 15px 20px 15px 70px;}
+.mb_friend .friend_date	{font-size: 12px;}
+.mb_friend .friend_group	{right: 20px;}
+.mb_friend .letter_list .letter_check	{left: 20px;}
+
+.group_manage .sbSelector	{width: 240px;}

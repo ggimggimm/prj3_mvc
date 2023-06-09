@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.Mapper">
+
+<!-- values ('이름','user아이디','닉네임','비번xx','kim@test.com','010-3537-6810','05243','서울시 동대문구','302호','1995-05-25',sysdate) -->
+<insert id="insertJoin" parameterType="user">
+insert into user_table (name, user_id, nick_name, pass, email, tel, zipcode, addr, detail_addr, birth_date, reg_date) 
+values (#{name},#{user_id},#{nick_name},#{pass},#{email},#{tel},#{zipcode},#{addr},#{detail_addr}, to_date(#{birth_date}, 'YY/MM/DD'),sysdate)
+</insert>
+
+
+<select id="selectIdDup" resultType="String" parameterType="String">
+select		user_id
+from		user_table
+where		user_id = #{user_id}
+</select>
+
+<select id="selectNickDup" resultType="String" parameterType="String">
+select		nick_name
+from		user_table
+where		nick_name = #{nick_name}
+</select>
+
+
+
+<select id="selectEmailDup" resultType="String" parameterType="String">
+select		email
+from		user_table
+where		email = #{email}
+</select>
+
+
+
+</mapper>

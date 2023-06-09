@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.screenInfo">
+
+<select id="selectOneMovie" resultType="kr.co.sist.prj3.admin.regscreen.domain.ScreenInfoDomain" parameterType="int">
+select	m_num,m_title,eng_title,release_date,rank,theater,open_date,end_date,release_hour
+from	movie
+where	m_num=#{mNum}
+</select>
+
+<update id="updateScreen" parameterType="kr.co.sist.prj3.admin.regscreen.vo.ScreenInfoVO">
+update	movie
+set		theater=#{theater},open_date=#{open_date},end_date=#{end_date},release_hour=#{release_hour},screen_state=#{screen_state}
+where	m_num=#{m_num}
+</update>
+</mapper>
+

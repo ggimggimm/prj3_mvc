@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.registMapper">
+
+<insert id="insertMovie" parameterType="kr.co.sist.prj3.admin.regmovie.vo.AdminMovieVO">
+insert into movie(m_num, poster, m_title,eng_title, genre, run_time, rank, country, summary, origin, script, produce, ration, imports, release_date, m_reg_date)
+values(#{m_num},#{poster},#{m_title},#{eng_title},#{genre},#{run_time},#{rank},#{country},#{summary},#{origin},#{script},#{produce},#{ration},#{imports},#{release_date},sysdate)
+</insert>
+
+<select id="selectMovieKey" resultType="int">
+	select MOVIE.SEQ_MOVIE.NEXTVAL from dual 
+</select>
+
+<insert id="insertDirector" parameterType="kr.co.sist.prj3.admin.regmovie.vo.AdminDirectVO">
+INSERT INTO director(d_num, m_num, d_name, d_eng, d_img)
+VALUES (MOVIE.SEQ_DIRECTOR.NEXTVAL,#{m_num},#{d_name},#{d_eng},#{d_img})
+</insert>
+
+
+<insert id="insertActor" parameterType="kr.co.sist.prj3.admin.regmovie.vo.AdminActorVO">
+INSERT INTO actor(a_num, m_num, a_name, a_eng, a_img, role)
+VALUES (MOVIE.SEQ_ACTOR.NEXTVAL,#{m_num},#{a_name},#{a_eng},#{a_img},#{role})
+</insert>
+			
+
+</mapper>

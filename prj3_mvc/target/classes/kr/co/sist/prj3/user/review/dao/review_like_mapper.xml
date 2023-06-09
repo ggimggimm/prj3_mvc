@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.Mapper"><!--여러 매퍼에 같은 아이디를 만들 수 있음-->
+
+<insert id="insertLike" parameterType="kr.co.sist.prj3.user.review.vo.LikeVO">
+insert into likes (rv_num, user_id)  
+values (#{rv_num},#{user_id})
+</insert>
+
+<delete id="deleteLike" parameterType="kr.co.sist.prj3.user.review.vo.LikeVO" >
+delete from likes
+where rv_num=#{rv_num} and user_id=#{user_id}
+</delete>
+
+
+<select id="selectLikes" resultType="int" parameterType="int">
+select count(user_id) from likes
+where rv_num =#{rv_num}
+</select>
+
+<select id="selectLikeStatus" resultType="String" parameterType="kr.co.sist.prj3.user.review.vo.LikeVO">
+select user_id from likes
+where rv_num=#{rv_num} and user_id=#{user_id}
+</select>
+
+</mapper>

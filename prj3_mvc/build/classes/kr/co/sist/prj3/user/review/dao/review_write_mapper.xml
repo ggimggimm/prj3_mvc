@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.reviewMapper">
+
+	<!-- <resultMap type="kr.co.sist.prj3.user.review.vo.WriteReviewVO" id="writeVO">
+		<result column="content" property="content"></result>	
+	</resultMap> -->
+
+	<insert id="insertReview" parameterType="kr.co.sist.prj3.user.review.vo.WriteReviewVO">
+		insert into review(rv_num, title, input_date, hits, content, m_num, user_id)
+		values(seq_review.nextval, #{title}, TO_CHAR(SYSDATE, 'yyyy-mm-dd hh24:mi:ss'), 0, #{content}, #{m_num}, #{user_id})
+	</insert>
+	
+	<update id="updateReview" parameterType="kr.co.sist.prj3.user.review.vo.ReviewModifyVO">
+		update REVIEW
+		set    TITLE = #{title}, CONTENT = #{content, typeHandler=org.apache.ibatis.type.ClobTypeHandler}
+		where  rv_num = #{rv_num}
+	</update>
+	
+	<select id="selectReview" parameterType="Integer" resultType="kr.co.sist.prj3.user.review.domain.ReviewWriteDomain">
+		select title, content
+		from review
+		where rv_num = #{rv_num}
+	</select>
+	
+	<delete id="deleteReview" parameterType="Integer">
+		delete
+		from review
+		where rv_num= #{rv_num}
+	</delete>
+
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.user.like_movie.dao.like_movie">
+
+<!-- 기대되는 영화 건수 -->
+<select id="selectCntMovie" resultType="int">
+	select count(*)
+	from movie_like
+	where user_id = #{ user_id }
+</select>
+
+<!-- 기대되는 영화 정보 -->
+<select id="selectMyMovie" parameterType="kr.co.sist.prj3.user.like_movie.vo.SelectTypeVO" resultType="kr.co.sist.prj3.user.like_movie.domain.MyMovieDomain">
+    SELECT m.m_num, m.poster, m.m_title, m.release_date
+    FROM movie m
+    JOIN movie_like ml ON m.m_num = ml.m_num
+    WHERE ml.user_id = #{user_id}
+    ORDER BY m.m_reg_date ASC
+    <!-- <if test="select_type == 1">
+        ORDER BY m.m_reg_date ASC
+    </if>
+    <if test="select_type == 2">
+        ORDER BY m.release_date ASC
+    </if> -->
+</select>
+
+<!-- 등록일, 개봉일 순 -->
+<select id="selectType" parameterType="kr.co.sist.prj3.user.like_movie.vo.SelectTypeVO" resultType="kr.co.sist.prj3.user.like_movie.domain.MyMovieDomain">
+    select m.m_num, m.poster, m.m_title, m.release_date
+    from movie m
+    join movie_like ml on m.m_num = ml.m_num
+    where ml.user_id = #{user_id}
+    order by
+    <choose>
+    	<when test="order_type == 2">
+    		release_date asc
+    	</when>
+    </choose>
+</select>
+
+<!-- 기대되는 영화 삭제 -->
+<delete id="deleteMyMovie" parameterType="int">
+	delete from movie_like
+	where m_num = ${m_num} and user_id = #{user_id}
+</delete>
+
+<select id="myGrade" parameterType="String" resultType="kr.co.sist.prj3.user.like_movie.domain.MyGradeDomain">
+select g.m_num, g.nick_name, g.m_grade, g.comments, g.input_date, m.m_title
+from grade g
+join movie m on g.m_num = m.m_num
+where g.user_id = #{ user_id }
+</select>
+
+<select id="gradeCnt" resultType="int">
+select count(*)
+from grade
+where user_id = #{ user_id }
+</select>
+</mapper>

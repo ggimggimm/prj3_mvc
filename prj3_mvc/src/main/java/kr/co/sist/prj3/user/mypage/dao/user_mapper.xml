@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.userMapper">
+
+<select id="selectUserInfo" resultType="String" >
+select	pass
+from	user_table
+where	user_id=#{user_id}
+</select>
+
+<select id="selectMemberInfo" resultType="kr.co.sist.prj3.user.mypage.domain.ModifyInfoDomain" parameterType="String">
+select	user_id,name,birth_date,tel,email,zipcode,addr,detail_addr
+from	user_table
+where	user_id=#{user_id}
+</select>
+
+<update id="updateMemberInfo" parameterType="kr.co.sist.prj3.user.mypage.vo.ModifyInfoVO">
+update	user_table
+set		tel=#{tel},email=#{email},zipcode=#{zipcode},addr=#{addr},detail_addr=#{detail_addr}
+where	user_id=#{user_id}
+</update>
+
+
+<update id="updateQuitMember" parameterType="String">
+update	user_table
+set		nick_name='n/a', pass='n/a', name='n/a', email='n/a', tel='n/a', zipcode='n/a', addr='n/a', detail_addr='n/a', reg_date='n/a', birth_date='n/a', profile='n/a', profile_msg='n/a', quit_date=sysdate
+where	user_id=#{user_id}
+</update>
+
+</mapper>

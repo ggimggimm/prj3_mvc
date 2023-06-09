@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.mainPageMapper">
+
+<!-- 예매율 1위 포스터 센터 -->
+<select id="center" resultType="kr.co.sist.prj3.user.mainpage.domain.MainInfoDomain" >
+SELECT m_num, m_title, summary, poster
+FROM movie
+WHERE r_rate = (
+    SELECT MAX(r_rate)
+    FROM movie
+    WHERE r_rate IS NOT NULL
+)
+AND ROWNUM = 1
+</select>
+
+<!-- 영화 리스트 -->
+<select id="movieList" resultType="kr.co.sist.prj3.user.mainpage.domain.SearchMovieDomain">
+select		movie.m_num, m_title, poster, r_rate, rank
+from		movie
+where     open_date is not null
+order by r_rate desc
+</select>
+
+<select id="noneList" resultType="kr.co.sist.prj3.user.mainpage.domain.SearchMovieDomain">
+SELECT movie.m_num, m_title, poster, rank
+FROM movie
+WHERE open_date IS NULL
+</select>
+<!-- 영화검색 -->
+<select id="searchMovie" resultType="kr.co.sist.prj3.user.mainpage.domain.SearchMovieDomain" parameterType="String">
+select		m_num, m_title, poster, release_date, rank, r_rate, open_date
+from		movie
+<where>
+<if test="title != null and title !='' ">
+m_title like '%'||#{ title }||'%'
+</if>
+</where>
+</select>
+</mapper>

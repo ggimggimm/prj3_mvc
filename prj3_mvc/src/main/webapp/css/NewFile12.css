@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+/* ------- layout ------- */
+.pt_box,
+.containerB .pt_boxD	{background-color: #fbdfdf;}
+.c_module, .c_module a	{background-color: #fbdfdf !important;}
+
+.pt_boxD	{background-color: #222;}
+.bt_open_notify.pt_boxD	{color: #FFF;}
+.bt_open_notify .pt_bg	{background-color: #ec5e5e !important;}
+
+.pt_box, .pt_boxD, .pt_box a, .pt_boxD a	{color: #ec5e5e;}
+.pt_col,
+.c_module, .c_module a	{color: #ec5e5e !important;}
+.pt_bg	{background-color: #ec5e5e !important;}
+.ink_banner_top	{background-color: #ec5e5e;}
+
+.c_module2, .c_module2 a	{background-color: #e5e5e5 !important;}
+.inkpf.color	{background-color: #e5e5e5;}
+.ink_message.ink_warn>div>h3,
+.board_name .inner,
+.ink_check input:checked + span	{background-color: #e5e5e5;}
+
+.ink_link,
+.ink_link2	{color: #41bc99;}
+.pt_col2,
+.c_module2, .c_module2 a	{color: #222 !important;}
+.board_name .inner,
+.board_name .inner a,
+.ink_check input + span>i	{color: #222;}
+.ink_check.ink_radio input:checked + span	{background-color: #c14c3d;}
+.pt_bg2	{background-color: #222 !important;}
+.ink_check input:checked + span	{border: 3px solid #222;}
+
+.ib_color	{background-color: #ec5e5e;}
+
+.ink_pointbar	{color: #FFF;  background-color: #BBB;}
+.ink_pointbar .current	{background-color: #ec5e5e;}
+.notify_type.notify_type_C	{background-color: #41bc99;}
+.notify_type.notify_type_V	{background-color: #ec5e5e;}
+.notify_type.notify_type_E {background-color: #c7af75;}
+
+/* ------- board ------- */
+.list_icon.new,
+.paging .bt_page a.active,
+.atc_vote .bt_vote,
+.cmt_buttons .cmt_vote .bt_vote	{color: #ec5e5e;}
+.ink_gallery .list_unit .new_atc::after	{border-top: 17px solid #ec5e5e; border-left: 17px solid #ec5e5e;}
+.atc_vote .bt_vote.submitted,
+.cmt_unit .cmt_vote .bt_vote.submitted	{background-color: #ec5e5e;}
+
+.atc_vote .bt_vote	{background-color: #fbdfdf;}
+.list_icon.new	{background-color: #ffdcdc;}
+
+.hided_info .cmt_num.updated	{color: #ff9c9c; border-color: #ff9c9c;}
+
+.atc_vote .bt_vote .voted_count	{border-left: 1px solid #f9d2d2;}
+.atc_vote .bt_vote.submitted .voted_count	{border-left-color: #ef7676;}
+
+.xe_content a,
+.atc_ex td a	{color: #41bc99;}
+
+.ink_rating>span::after,
+.list_ctg2 a,
+.atc_tags a:hover,
+.atc_file li>a:hover,
+.atc_file_list .file_icon.off,
+.atc_authorD .title_link:hover,
+.atc_authorD a:hover .fa-comment-dots,
+.cmt_write_option .bt_write_type:hover i,
+.notice_text	{color: #222;}
+.atc_file a:hover .file_count,
+.bt_report:hover .declared_count	{background-color: #222;}
+
+.list_ctg2>span,
+.atc_tags a:hover,
+.atc_file li>a:hover,
+.atc_file_list .file_icon.off 	{background-color: #e5e5e5;}
+.atc_tags a:hover::before	{border-right-color: #e5e5e5;}
+
+.notice_list,
+.ldf_notice .faq_header,
+.ldn tr.notice 	{background-color: #ffffea;}
+.notice_list li	{border-bottom: 1px solid #f4f4e0;}
+.ink_list .notice_list li:last-child,
+.ldn tr.notice,
+.ldf_notice .list_unit	{border-bottom: 1px solid #f4f4e0;}
+.ldn tr.notice:first-child,
+.ldf_notice .list_body	{border-top: 1px dotted #f4f4e0;}
+.list_wrap .notice_list .title_link:visited	{color: #adada0;}
+
+.hided_info .list_ctg2>span	{background-color: rgba(173,226,201,0.8);}
+/* ------- member ------- */
+.mb_set	 {background-color: #e5e5e5;}
+.mb_set .inkpf	{background-color: #d4e9df;}
+.mb_set .point_text	{color: #9aa6a0;}
+
+/* ------- widget ------- */
+.w_list .list_icon.new,
+.w_list .cmt_num	{color: #ec5e5e;}
+.w_list .big_rank.new_atc::after	{border-top-color: #ec5e5e; border-left-color: #ec5e5e;}
+.w_list .new_atcG::after	{border-top: 17px solid #ec5e5e; border-left: 17px solid #ec5e5e;}
+
+.w_list .list_icon.new	{background-color: #ffdcdc;}
+
+.box_rank.rank1 .list_rank,
+.box_rank.rank2 .list_rank,
+.box_rank.rank3 .list_rank	{color: #FFF;}
+.w_list .board_nameS .inner::after	{color: #222;}
+
+.box_rank.rank1 .list_rank	{background-color: #ec5e5e;}
+.box_rank.rank2 .list_rank	{background-color: #222;}
+.box_rank.rank3 .list_rank	{background-color: #c7af75;}
+
+.wn .list_rank	{color: #222;}
+.wl .nickname	{background-color: #DDD; color: #222;}
+
+.board_nameS a:first-of-type:not(:only-of-type)	{border-right: 1px solid #d5d5d5;}
+.wg_news .board_nameS .inner,
+.ws .list_board .inner,
+.wg .hided_info .board_nameS .inner	{background-color: rgba(34,34,34,0.8) !important; color: #FFF !important;}
+/* ------- etc ------- */

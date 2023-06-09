@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.reviewListMapper">
+	
+	<!-- 처음 화면에 reviewList 뿌려주기 + 검색 조건 뿌려주기-->
+	<select id="reviewUserList" resultType="reviewUserRBD" parameterType="Integer">
+		SELECT
+		  review.title,
+		  user_table.nick_name,
+		  user_table.user_id,
+		  review.input_date,
+		  review.hits,
+		  review.rv_num,
+		  COUNT(likes.user_id) AS like_total
+		FROM
+		  review
+		  JOIN user_table ON review.user_id = user_table.user_id
+		  LEFT OUTER JOIN likes ON review.rv_num = likes.rv_num
+		WHERE
+			review.m_num = #{m_num} and nick_name != 'n/a'
+		<choose>
+			<when test="search_type == 0">
+				and 1=1 and nick_name != 'n/a'
+			</when>
+			<when test="search_type == 1">
+				and review.title LIKE '%'||#{search}||'%' and nick_name != 'n/a'
+			</when>
+			<when test="search_type == 2">
+				and user_table.nick_name LIKE '%'||#{search}||'%' and nick_name != 'n/a'
+			</when>
+			<when test="search_type == 3">
+				and review.title LIKE '%'||#{search}||'%' OR user_table.nick_name LIKE '%'||#{search}||'%' and nick_name != 'n/a'
+			</when>
+		</choose>
+		GROUP BY
+		  review.title,
+		  user_table.nick_name,
+		  user_table.user_id,
+		  review.input_date,
+		  review.rv_num,
+		  review.hits
+	</select>
+</mapper>

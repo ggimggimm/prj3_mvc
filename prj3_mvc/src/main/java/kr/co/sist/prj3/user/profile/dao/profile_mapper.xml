@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.Mapper"><!--여러 매퍼에 같은 아이디를 만들 수 있음-->
+
+
+<select id="selectProfile" resultType="kr.co.sist.prj3.user.profile.domain.MyProfileDomain" parameterType="String">
+select user_id, nick_name, name, profile, profile_msg 
+from	user_table 
+where	user_id = #{user_id}
+</select>
+
+<update id="updateProfile" parameterType="kr.co.sist.prj3.user.profile.vo.ProfileModifyVO">
+update  user_table 
+set		nick_name = #{nick_name}, profile = #{profile}, profile_msg = #{profile_msg} 
+where	user_id = #{user_id} 
+</update>
+
+</mapper>

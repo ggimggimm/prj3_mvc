@@ -1,0 +1,113 @@
+.eb_widget_pc {
+	background: #fff;
+	border-radius: 20px;
+	font-size: 15px;
+	line-height: 150%;
+	overflow: hidden;
+}
+
+.darkmode .eb_widget_pc,
+.color_scheme_dark .eb_widget_pc {
+	background: #282828;
+}
+
+.eb_widget_pc .eb_widget_tabs {
+	display: flex;
+	background: #f7f7f7;
+}
+
+.darkmode .eb_widget_pc .eb_widget_tabs,
+.color_scheme_dark .eb_widget_pc .eb_widget_tabs {
+	background: #343434;
+}
+
+.eb_widget_pc .eb_widget_tabs a {
+	width: 50%;
+	padding: 15px 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.eb_widget_pc .eb_widget_list {
+	display: flex;
+}
+
+.eb_widget_pc .eb_widget_list ul {
+	width: 50%;
+	padding: 15px 20px;
+	box-sizing: border-box;
+}
+
+.eb_widget_pc .eb_widget_list ul li {
+	margin: 0;
+	padding: 5px 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.eb_widget_pc .eb_widget_list ul li .eb_order {
+	flex-shrink: 0;
+	width: 24px; height: 24px;
+	font-size: 11px; line-height: 24px;
+	text-align: center;
+	margin-right: 10px;
+	border-radius: 5px;
+	background: #eee;
+	color: #999;
+}
+
+.darkmode .eb_widget_pc .eb_widget_list ul li .eb_order,
+.color_scheme_dark .eb_widget_pc .eb_widget_list ul li .eb_order {
+	background: #222;
+	color: #999;
+}
+
+.eb_widget_pc .eb_widget_list ul li .eb_order_1 {
+	background: #ec5e5e;
+	color: #fff;
+}
+
+.darkmode .eb_widget_pc .eb_widget_list ul li .eb_order_1,
+.color_scheme_dark .eb_widget_pc .eb_widget_list ul li .eb_order_1 {
+	background: #ec5e5e;
+	color: #222;
+}
+
+.eb_widget_pc .eb_widget_list ul li .eb_order_2 {
+	background: #222;
+	color: #fff;
+}
+
+.darkmode .eb_widget_pc .eb_widget_list ul li .eb_order_2,
+.color_scheme_dark .eb_widget_pc .eb_widget_list ul li .eb_order_2 {
+	background: #227d9f;
+	color: #222;
+}
+
+.eb_widget_pc .eb_widget_list ul li .eb_order_3 {
+	background: #c7af75;
+	color: #fff;
+}
+
+.darkmode .eb_widget_pc .eb_widget_list ul li .eb_order_3,
+.color_scheme_dark .eb_widget_pc .eb_widget_list ul li .eb_order_3 {
+	background: #63b682;
+	color: #222;
+}
+
+.eb_widget_pc .eb_widget_list ul li .eb_document_link {
+	flex-shrink: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.eb_widget_pc .eb_widget_list ul li .eb_comment_count {
+	flex-shrink: 0;
+	margin-left: 6px;
+	font-size: 13px;
+	color: #ec5e5e;
+}

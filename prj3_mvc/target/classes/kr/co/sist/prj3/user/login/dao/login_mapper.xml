@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.Mapper"><!--여러 매퍼에 같은 아이디를 만들 수 있음-->
+<select id="userLogin" parameterType="kr.co.sist.prj3.user.login.vo.LoginVO" resultType="kr.co.sist.prj3.user.login.domain.LoginResultDomain">
+select 		user_id, nick_name, birth_date, profile, name
+from		user_table 
+where		user_id = #{user_id} and pass = #{pass}
+</select>
+
+<select id="adminLogin" parameterType="kr.co.sist.prj3.user.login.vo.AdminLoginVO" resultType="String">
+select 		admin_id 
+from		admin 
+where		admin_id = #{admin_id} and password = #{password}
+</select>
+
+
+</mapper>

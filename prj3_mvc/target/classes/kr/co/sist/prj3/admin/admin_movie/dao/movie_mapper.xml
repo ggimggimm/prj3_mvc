@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.movieMapper">  
+	
+	<!-- 영화 list -->
+	<select id="selectMovieList" resultType="md" parameterType="String">
+		select m.m_num, m.m_title, max(d.d_name) as d_name, m.genre, m.rank, m.release_date, m.m_reg_date, m.screen_state
+		from movie m
+		join director d on m.m_num = d.m_num
+		<where>
+        	<if test="m_title != null">
+            	and m.m_title like concat(#{m_title}, '%')
+        	</if>  
+       		<if test="m_title == null">
+            	and m.screen_state = 'y'
+        	</if>
+    	</where>
+		group by m.m_num, m.m_title, m.genre, m.rank, m.release_date, m.m_reg_date, m.screen_state
+	</select> 
+	
+	<!-- 상영중, 미상영 -->
+	<select id="movieState" resultType="md" parameterType="String">
+		select m.m_num, m.m_title, max(d.d_name) as d_name, m.genre, m.rank, m.release_date, m.m_reg_date, m.screen_state
+		from movie m
+		join director d on m.m_num = d.m_num
+		<where>
+			<if test="select_type == 1">
+				and (m.screen_state = 'y' or m.screen_state = 'n' or m.screen_state is null)
+			</if>
+        	<if test="select_type == 2">
+            	and m.screen_state = 'y'
+        	</if>
+        	<if test="select_type == 3">
+            	and m.screen_state = 'n' or m.screen_state is null
+        	</if>
+    	</where>
+		group by m.m_num, m.m_title, m.genre, m.rank, m.release_date, m.m_reg_date, m.screen_state
+	</select>
+	
+	
+	<select id="selectMovieKey" resultType="int">
+		select MOVIE.SEQ_MOVIE.NEXTVAL from dual 
+	</select>
+	
+	<!-- 영화수정(주요정보) -->
+	<select id="suMovie" resultType="emd" parameterType="int">
+		select  m_num, poster, m_title, eng_title, genre, run_time, release_date, rank, country, summary, origin, script, produce, ration, imports
+		from    movie
+		where   m_num = #{m_num}
+	</select>
+	
+	<!-- 영화수정(감독) -->
+	<select id="selectDirector" resultType="dd" parameterType="int">
+		select  m_num, d_name, d_eng, d_img, d_num
+		from    director
+		where   m_num = #{m_num}
+	</select>
+	
+	<!-- 영화수정(배우) -->
+	<select id="selectActor" resultType="ad" parameterType="int">
+		select m_num, a_name, a_eng, a_img, role, a_num
+		from actor
+		where m_num = #{ m_num }
+	</select> 
+	
+	<!-- 영화수정(주요정보) update -->
+	<update id="updateMovie" parameterType="kr.co.sist.prj3.admin.admin_movie.vo.EditMovieVO">
+		update movie
+		set poster=#{ poster }, m_title=#{ m_title }, eng_title=#{ eng_title }, genre=#{ genre }, run_time=#{ run_time }, 
+			release_date=#{ release_date }, rank=#{ rank }, country=#{ country }, summary=#{ summary }, origin=#{ origin }, 
+			script=#{ script }, produce=#{ produce }, ration=#{ ration }, imports=#{ imports }
+		where m_num=#{ m_num }
+	</update>
+	
+	<!-- 영화수정(감독) -->
+	<insert id="updateDirector" parameterType="kr.co.sist.prj3.admin.admin_movie.vo.DirectorVO">
+		insert into director(d_num, m_num, d_name, d_eng, d_img)
+		values (movie.seq_director.nextval,#{m_num},#{d_name},#{d_eng},#{d_img})
+	</insert> 
+
+	
+	<delete id="deleteDirector" parameterType="int">
+		delete from director
+		where d_num = #{ d_num }
+	</delete> 
+	
+	<!-- 영화수정(배우) -->
+	<insert id="updateActor" parameterType="kr.co.sist.prj3.admin.admin_movie.vo.ActorVO">
+		insert into actor(a_num, m_num, a_name, a_eng, a_img, role)
+		values (movie.seq_actor.nextval,#{m_num},#{a_name},#{a_eng},#{a_img},#{role})
+	</insert>
+	
+	<delete id="deleteActor" parameterType="int">
+		delete from actor
+		where a_num = #{ a_num }
+	</delete> 
+	
+		<!-- 영화 평점 관리 -->
+<select id="selectGradeList" resultType="kr.co.sist.prj3.admin.admin_movie.domain.MovieGradeDomain" parameterType="String">
+    select d.g_num, m.m_title, d.user_id, d.m_grade, d.comments, d.input_date
+    from grade d
+    join movie m on d.m_num = m.m_num
+    group by d.g_num, m.m_title, d.user_id, d.m_grade, d.comments, d.input_date
+</select>
+
+	<!-- 영화 한줄평 삭제 -->
+<delete id="deleteGradeList" parameterType="Integer">
+	delete 
+	from grade
+	where g_num = #{g_num}
+</delete>
+	
+</mapper>

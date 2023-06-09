@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.total_info">
+
+
+<!-- 영화 주요 정보 -->
+<select id="selectcommInfo" resultType="kr.co.sist.prj3.user.total_info.domain.CommInfoDomain">
+select     	m_num, m_title, eng_title, release_date, genre, run_time, country, rank, poster
+from        movie
+where       m_num=#{m_num}
+</select>
+
+<!-- 좋아요 상태 -->
+<select id="selectLikeMovie" resultType="String" parameterType="kr.co.sist.prj3.user.total_info.vo.LikeMovieVO">
+select user_id
+from movie_like
+where m_num = #{ m_num } and user_id = #{ user_id }
+</select>
+
+<!-- 좋아요 추가 -->
+<insert id="insertLikeMovie" parameterType="kr.co.sist.prj3.user.total_info.vo.LikeMovieVO">
+insert into movie_like (m_num, user_id)
+values (#{m_num}, #{user_id}) 
+</insert>
+
+<!-- 좋아요 삭제 -->
+<delete id="deleteLikeMovie" parameterType="kr.co.sist.prj3.user.total_info.vo.LikeMovieVO">
+delete from movie_like
+where m_num = #{ m_num } and user_id = #{ user_id }
+</delete>
+
+<!-- 줄거리 -->
+<select id="selectSummary" resultType="String">
+select		summary
+from		movie
+where		m_num=#{m_num}
+</select>
+
+<!--감독 (주요정보, 출연/제작) -->							
+<select id="selectDirectorMain" resultType="kr.co.sist.prj3.user.total_info.domain.DirectorDomain">
+select 		d_img, d_name, d_eng
+from 		director
+where		m_num=#{m_num}
+</select>
+
+<!-- 배우 (주요정보, 출연/제작)-->							
+<select id="selectActorMain" resultType="kr.co.sist.prj3.user.total_info.domain.ActorDomain">
+select 		a_img, a_name, a_eng, role
+from 		actor
+where		m_num=#{m_num}
+</select>
+
+<!-- 영화 사진 -->							
+<select id="selectMovieImg" resultType="kr.co.sist.prj3.user.total_info.domain.MovieImgDomain">
+select 		m_img
+from 		gallery
+where		m_num=#{m_num}
+</select>
+
+<!-- 출연/제작사 -->
+<select id="selectProduce" resultType="kr.co.sist.prj3.user.total_info.domain.ProduceDomain">
+select		origin, script, produce, ration, imports
+from		movie
+where		m_num=#{m_num}
+</select>
+
+<!-- 평균 평점 -->
+<select id="selectAvgGrade" resultType="integer">
+select 		round(avg(m_grade), 2) as average_rate
+from		grade
+where		m_num=#{m_num}
+</select>
+
+<!-- 평가 수 -->
+<select id="selectCntGrade" resultType="integer">
+select		count(*) 
+from		grade
+where 		m_num=#{m_num}
+</select>
+
+<!-- 평점 리스트 select -->
+<select id="selectGrade" resultType="kr.co.sist.prj3.user.total_info.domain.GradeDomain">
+select m_num, g_num, user_id, nick_name, m_grade, comments, input_date
+from grade
+where m_num = #{ m_num }
+order by input_date desc
+</select>
+
+<select id="selectGradeOld" resultType="kr.co.sist.prj3.user.total_info.domain.GradeDomain">
+select m_num, g_num, user_id, nick_name, m_grade, comments, input_date
+from grade
+where m_num = #{ m_num }
+order by input_date asc
+</select>
+
+
+
+<!-- 평점 삭제 -->
+<delete id="deleteGrade" parameterType="kr.co.sist.prj3.user.total_info.vo.GradeVO">
+  delete from grade
+  where user_id = #{user_id} and g_num = #{g_num} and m_num = #{m_num}
+</delete>
+
+<!-- 별점, 한줄평 등록 -->
+<select id="insertGrade" parameterType="kr.co.sist.prj3.user.total_info.vo.GradeVO">
+insert into grade(G_NUM, M_NUM, USER_ID, M_GRADE, COMMENTS, INPUT_DATE, NICK_NAME)
+values ( seq_grade.nextval, #{m_num}, #{user_id}, #{m_grade}, #{comments}, to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'), #{nick_name})
+</select> 
+
+
+
+</mapper>

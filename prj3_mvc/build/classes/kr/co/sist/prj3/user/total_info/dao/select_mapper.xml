@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.total_info">
+
+<!-- 영화번호에 따른 줄거리 출력 -->
+<select id="selectSummary" resultType="String" parameterType="Integer">
+select		summary
+from		movie
+where		m_num=#{m_num}
+</select>
+
+</mapper>

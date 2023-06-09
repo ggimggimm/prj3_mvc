@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------------------------
+폰트 색상 #222, #666, #999, #BBB, #CCC, #DDD
+배경,선 색상 #f7f7f7, #EEE, #e5e5e5, #DDD, #d5d5d5, #CCC, #BBB, #AAA, #999, #666, #222
+--------------------------------------------------------------------------- */
+
+body	{background-color: #EEE;}
+.ink_sidebar.left_sidebar::after,
+.ink_sidebar.right_sidebar::after	{background-color: #e5e5e5;}
+
+/* ------- layout ------- */
+.ink_bt_top	{background-color: rgba(255,255,255,0.8);}
+
+.ib_mono3:hover,
+.ib_mono:hover i.only,
+.ib_mono2:hover i.only,
+.font_grey1 a:hover, 
+.font_grey1 button:hover,
+.ink_top a:hover,
+.bt_nav:hover button,
+.ink_gnb .active>a,
+.ink_gnb a:hover,
+.open_mode .ink_gnb a,
+.ink_sidebar .sidebar_menu li.active>a,
+.sbOptions a:hover	{color: #222;}
+
+.ink_top,
+.ink_top a,
+.ink_top button,
+.is_logged .bt_area a,
+.notify_wrap .bt_notify_position:hover button,
+.ink_sidebar .sidebar_menu a,
+.sidebar_menu .bt_openclose	{color: #666;}
+
+.nav_buttons button,
+.ink_gnb a,
+.sbOptions a	{color: #999;}
+
+.ink_sidebar .sidebar_menu .fa-folder,
+.ink_sidebar .sidebar_menu .fa-folder-open	{color: #CCC;}
+
+.ink_top a:hover	{border-bottom: 1px solid #222;}
+.notify_list li:hover strong:nth-of-type(2)	{border-bottom-color: #222;}
+
+.nav_wrap.fixed	{background-color: #FFF !important;}
+.no_navbox,
+.has_navbox .nav_wrap,
+.containerB .ink_wrapper,
+.ink_box	{background-color: #FFF;}
+.has_layout_bg .no_navbox,
+.has_layout_bg .has_navbox .nav_wrap	{background-color: rgba(255,255,255,0.6);}
+
+.has_navbox .header_side,
+.ink_sidebar .is_logged,
+.notify_wrap.fixed h3,
+.notify_wrap.fixed .bt_area,
+.ink_sidebar .ink_module h3,
+.no_header .ink_top::before	{background-color: #f7f7f7;}
+.has_layout_bg .has_navbox .header_side	{background-color: rgba(247,247,247,0.9);}
+
+.notify_wrap.fixed .inkpf,
+.ink_sidebar .is_logged .inkpf,
+.sidebar_menu a>span,
+.sidebar_menu .bt_openclose::after,
+.sbSelector,
+.containerB .ink_sidebar.right_sidebar::after,
+.containerB .ink_sidebar.left_sidebar::after	{background-color: #EEE;}
+.has_sidebox.no_navbox .logo	{border-left: 1px solid #EEE; border-right: 1px solid #EEE;}
+.ink_header .is_unlogged>a:first-of-type	{border-right: 1px solid #EEE;}
+.no_navbox .nav_wrap	{border-top: 1px solid #EEE;}
+.nav_wrap.normal_mode .ink_gnb>ul>li>ul>li,
+.containerB>.ink_top,
+.containerB .ink_header	{border-bottom: 1px solid #EEE;}
+.nav_wrap.view_mode .ink_gnb>ul>li	{border-right: 1px solid #EEE;}
+
+.ib_mono2	{background-color: #e5e5e5;}
+.ib_mono3::before	{background-color: #f2f2f2;}
+.ink_login2 .keep_desc	{border: 1px solid #e5e5e5;}
+
+.ib_mono::before,
+.scrollbar-macosx > .scroll-element .scroll-bar	{background-color: #DDD;}
+
+.ib_mono2::before	{background-color: #d5d5d5;}
+
+.ink_top .bt_open_gn .num_box2	{background-color: #BBB;}
+
+.global_notice>ul	{background-color: #fcf8e3;}
+
+/* ------- board ------- */
+.list_category .active>a,
+.list_category2 .active>a,
+.list_buttons .has_bubble:hover,
+.list_wrap .list_cmt.new_cmt,
+.bt_cmt_reload:hover	{color: #222;}
+
+.cmt_bubble .cmt_ctrl a,
+.memo_form_dummy .bt_editor:hover i,
+.memo_ctrl a,
+.bt_cmt_reload	{color: #666;}
+
+.list_category2 ul a,
+.list_category2 .fa-angle-down,
+.list_buttons .has_bubble,
+.ldd .list_info,
+.ldd .list_info a,
+.bt_send_msg,
+.cmt_bubble .bt_cmt_ctrl,
+.cmt_bubble .cmt_ctrl .bt i,
+.bt_memo_ctrl,
+.memo_notice .notice_icon	{color: #999;}
+
+.list_type a,
+.list_wrap .list_cmt	{color: #BBB;}
+
+.containerN .ldn th,
+.containerN .ldn tbody tr:not(.notice):hover td,
+.containerN .ldn tr.now_reading:not(.notice),
+.containerN .ink_atc,
+.containerN .ink_gallery .list_unit,
+.containerN .memo_body,
+.containerN .bd_write,
+.best_articles	{background-color: #FFF;}
+
+.containerN .ink_list	{background-color: #f9f9f9;}
+
+.list_category2>ul>li>a,
+.list_category2>ul>li>ul,
+.list_type a,
+.list_buttons .has_bubble,
+.atc_info,
+.cmt_bubble .cmt_ctrl a:hover,
+.write_ex .lb,
+.memo_form .sbSelector,
+.memo_header .inkpf,
+.memo_ctrl a:hover,
+.memo_notice .notice_icon,
+.cmt_reload,
+.containerB .ldn tbody tr:not(.notice):hover td,
+.containerB .ldn tr.now_reading:not(.notice),
+.containerB .ink_gallery .list_unit,
+.bd_write .sbSelector,
+.containerB .write_header	{background-color: #f7f7f7;}
+.atc_ctrl a	{border-bottom: 1px solid #f7f7f7;}
+.containerB .atc_header	{border: 5px solid #f7f7f7;}
+
+.list_wrap .inkpf,
+.list_wrap .list_cmt,
+.has_authorD::after,
+.cmt_bubble .bt_cmt_ctrl,
+.containerB .bt_memo_ctrl,
+.list_unit:hover .list_cmt,
+.best_articles::after	{background-color: #EEE;}
+.paging .bt_page a	{border-right: 1px solid #EEE;}
+.ldd .list_unit,
+.cmt_bubble .cmt_ctrl a,
+.containerN .write_header,
+.memo_ctrl a,
+.containerB .ldn table	{border-bottom: 1px solid #EEE;}
+.containerB .ldn table	{border-top: 1px solid #EEE;}
+.write_ex>ul	{border: 3px solid #EEE;}
+.containerB .memo_body	{border: 1px solid #EEE;}
+.containerB .memo_form .write_ex>ul	{border-color: #EEE;}
+.containerB .my_atc .memo_body	{border: 5px solid #EEE;}
+
+.list_wrap .list_cmt.new_cmt	{background-color: #e5e5e5;}
+.ldd .list_summary	{border-top: 1px dotted #e5e5e5;}
+.write_ex .lb	{border-right: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;}
+.write_ex .ip	{border-bottom: 1px solid #e5e5e5;}
+.containerN .memo_form .write_ex>ul	{border-color: #e5e5e5;}
+.containerN .my_atc .memo_body	{border: 5px solid #e5e5e5;}
+
+.ldd .list_info>span:not(.ink_rating)::after,
+.ldw .list_info>span::after,
+.containerN .bt_memo_ctrl	{background-color: #DDD;}
+.bt_send_msg	{border: 3px solid #DDD;}
+
+.memo_write	{border-bottom: 1px dotted #d5d5d5;}
+.ldm .notice	{border-bottom: 1px dotted #d5d5d5;}
+
+.list_wrap .list_icon2.normal,
+.list_wrap .link_board_edit	{background-color: #CCC;}
+.cmt_prev .bt_cmt_prev:hover	{border-color: #CCC;}
+
+.bt_send_msg:hover	{border-color: #BBB;}
+.atc_ip a:hover	{border-bottom-color: #BBB;}
+.atc_vote .bt_blame:hover .voted_count	{border-left-color: #BBB;}
+
+.atc_vote .bt_blame:hover,
+.cmt_unit .cmt_buttons .bt_wrap .bt:hover,
+.cmt_bubble .bt_cmt_ctrl.active,
+.cmt_bubble .bt_cmt_ctrl:hover,
+.bt_memo_ctrl.active,
+.bt_memo_ctrl:hover	{background-color: #999;}
+.cmt_unit .cmt_buttons .cmt_vote .bt_blame:hover	{background-color: #999 !important;}
+
+.list_wrap .list_icon2.file	{background-color: #666;}
+
+.atc_ctrl a:hover	{border-bottom-color: #222;}
+
+/* ------- member ------- */
+.mb_buttons .has_bubble:hover,
+.mb_info_tab .active a	{color: #222;}
+
+.mb_buttons .has_bubble,
+.mb_info_tab a	{color: #999;}
+
+.mb_header .sbSelector,
+.mb_buttons .has_bubble,
+.mb_info_tab,
+.mb_scrapped li .sbSelector	{background-color: #f7f7f7;}
+
+.scrap_folder .ink_dropdown .bt,
+.letter_list>ul::after		{background-color: #EEE;}
+.paging .bt_page a	{border-right: 1px solid #EEE;}
+.scrap_folder,
+.mb_signup>ul>li,
+.ink_message .letter_content .inner,
+.mb_agreement	{border-bottom: 1px solid #EEE;}
+.mb_login .keep_msg	{border: 1px solid #EEE;}
+
+.mb_saved .list_content,
+.mb_signup .help-block	{border-top: 1px dotted #e5e5e5}
+
+.tab_letter .num_box2	{background-color: #BBB;}
+
+.mb_set .mb_info_menu a:hover	{border-bottom-color: #666;}
+
+/* ------- widget ------- */
+.w_tab_unit.active>a,
+.pr_item_del:hover	{color: #222;}
+
+.w_paging .inner,
+.ink_widget.no_box .w_list_footer>a,
+.w_list .list_info,
+.w_list .list_info a,
+.w_list .list_summary,
+.wr .list_date,
+.wr .list_nickname,
+.wr .list_nickname a	{color: #999;}
+
+.w_paging i,
+.w_tab_unit>a	{color: #BBB;}
+
+.mymenu_node .fa-folder,
+.mymenu_node .fa-folder-open	{color: #CCC;}
+
+.color_nav .mymenu_title,
+.color_nav .mymenu_title a	{color: #FFF;}
+.containerN .ink_widget,
+.ink_content .ink_rank ol,
+.containerN .no_box .wr .list_body,
+.ldw .list_unit:hover,
+.ldd .list_unit:hover,
+.ldf_doc .faq_header:hover,
+.ldf_doc .faq_header.opened	{background-color: #FFF;}
+.containerN .no_box .wr .list_body::after	{border-top: 5px solid #FFF; border-left: 5px solid #FFF;}
+
+.w_title,
+.ink_widget.no_box .board_name2 .inner,
+.ink_widget.no_box .w_list_footer>a,
+.wl .list_unit>li,
+.nav_wrap.view_mode .mymenu_list ul,
+.nav_wrap.open_mode .mymenu_list ul,
+.ink_content .ink_rank h3,
+.wr .list_body,
+.containerB .no_box .wr .list_body	{background-color: #f7f7f7;}
+.wr .list_body::after,
+.containerB .no_box .wr .list_body::after	{border-top: 5px solid #f7f7f7; border-left: 5px solid #f7f7f7;}
+
+.containerB .ink_content .ink_widget	{border: 1px solid #EEE;}
+.containerB .ink_content .ink_widget.no_box	{border: none;}
+.nav_wrap .mymenu_list li,
+.containerB .ink_widget.no_box .w_title	{border-bottom: 1px solid #EEE;}
+
+.ink_widget.no_box .w_title	{border-bottom: 1px solid #DDD;}
+.ws_text .swiper-pagination-bullet	{background-color: #DDD;}
+
+.w_paging .w_bullet	{background-color: #CCC;}
+
+.ink_widget.no_box .w_list_footer>a:hover	{background-color: #999;}
+
+/* ------- etc ------- */

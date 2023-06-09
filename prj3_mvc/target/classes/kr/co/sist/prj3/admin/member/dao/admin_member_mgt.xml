@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.Mapper"><!--여러 매퍼에 같은 아이디를 만들 수 있음-->
+
+<!--동적쿼리 -->
+<select id="selectMembers" resultType="memBrd" parameterType="String">
+select  user_id, name, addr, tel, birth_date, reg_date
+from	user_table
+where	quit_date is null
+<if test= "name!=''">
+	and name=#{name}
+</if>
+order by to_date(reg_date,'YY/MM/DD') desc
+</select>
+
+<select id="selectMemInfo" resultType="memInfo" parameterType="String">
+select	 user_id, name, nick_name, email, tel, addr, detail_addr, profile, profile_msg, birth_date, zipcode 
+from     user_table
+where	 user_id = #{user_id}
+</select>
+
+
+<update id="updateDelUser" parameterType="String">
+update	user_table
+set     nick_name='n/a', pass='n/a', name='n/a', email= seq_email.nextval , tel='n/a', zipcode='n/a', addr='n/a', detail_addr='n/a', reg_date='n/a', birth_date='n/a', profile='n/a', profile_msg='n/a', quit_date=sysdate   
+where   user_id = #{user_id}
+</update>
+
+
+
+</mapper>

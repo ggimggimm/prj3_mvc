@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.reviewMapper">
+
+	<!-- 중복쿼리문의 사용 -->
+	<sql id="reviewAll">
+		select rv_num, title, input_date, user_id 
+		from review
+	</sql>
+
+	<!-- 처음 화면에 reviewList 뿌려주기 -->	
+	<select id="reviewList" resultType="reviewAdminRBD">
+		<include refid="reviewAll"/>
+	</select>
+	
+	<!-- 검색 버튼 눌렀을 때 해당하는 검색 조건 뿌려주기 -->
+	<select id="reviewListSearch" resultType="reviewAdminRBD" parameterType="kr.co.sist.prj3.admin.review.vo.ReviewSearchVO">
+		<include refid="reviewAll"/>
+		where
+		<choose>
+			<when test="search_type == 0">
+				 1=1
+			</when>
+			<when test="search_type == 1">
+				 title LIKE '%'||#{search}||'%'
+			</when>
+			<when test="search_type == 2">
+				 content LIKE '%'||#{search}||'%'
+			</when>
+			<when test="search_type == 3">
+				 title LIKE '%'||#{search}||'%' OR content LIKE '%'||#{search}||'%'
+			</when>
+			<when test="search_type == 4">
+				 user_id LIKE '%'||#{search}||'%'
+			</when>
+		</choose>
+	</select>
+	
+	<!-- 삭제버튼 눌렀을 때 delete -->
+	<delete id="reviewDelete" parameterType="Integer">
+		delete 
+		from review
+		where rv_num=#{rv_num} 
+	</delete>
+	
+
+
+</mapper>

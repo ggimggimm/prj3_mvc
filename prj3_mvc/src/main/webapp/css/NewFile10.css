@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------------------------
+폰트 색상 #222, #666, #999, #BBB, #DDD
+배경,선 색상 #f7f7f7, #EEE, #e5e5e5, #CCC, #BBB, #AAA, #999
+--------------------------------------------------------------------------- */
+
+/* ------- layout ------- */
+.pt_bg,
+.pt_bg2	{color: #FFF !important;}
+.ink_banner_top,
+.ink_banner_top a,
+.ink_banner_top button	{color: #FFF;}
+.ink_banner_top a	{border-bottom: 1px solid #FFF;}
+
+body,
+a,
+.ii	{color: #000;}
+
+.ib_mono,
+.ib_monoC,
+.ink_dropdown .bt,
+.board_name2 .inner	{ color: #555;}
+
+.font_grey1,
+.font_grey1 a,
+.ib_mono3,
+.ib i.only	{color: #777;}
+
+.sns_login .sns_warn i	{color: #BBB;}
+.ii::-webkit-input-placeholder	{color: #bbb;}
+.ii::-moz-placeholder	{color: #bbb;}
+.ii:-ms-input-placeholder	{color: #bbb;}
+.ii:-moz-placeholder	{color: #bbb;}
+textarea::-webkit-input-placeholder	{color: #bbb;}
+textarea::-moz-placeholder	{color: #bbb;}
+textarea:-ms-input-placeholder	{color: #bbb;}
+textarea:-moz-placeholder	{color: #bbb;}
+
+.ink_message>div	{background-color: #FFF;}
+
+.bg_grey1,
+.inkpf,
+.ib_mono3,
+.ii.ii2,
+.ink_dropdown .bt,
+.ink_message>div>h3,
+.ink_message .bt_area	{background-color: #f7f7f7;}
+
+.bg_grey2,
+.ib_mono,
+.ib_monoC,
+.ii,
+.ink_pointbar,
+.board_name2 .inner,
+.ink_check input:active + span,
+.sns_login.not_only::before	{background-color: #EEE;}
+
+.bt_group .ib	{border-right: 1px solid #e5e5e5;}
+.notify_list>ol>li	{border-bottom: 1px dotted #e5e5e5;}
+.ink_check>span	{border: 3px solid #e5e5e5;}
+
+.ink_check.ink_radio>span	{background-color: #CCC;}
+.notify_type	{background-color: #BBB;}
+.ink_check.ink_radio input:active + span	{background-color: #AAA;}
+
+.write_notice	{background-color: #ffffea;}
+.global_notice>ul>li:after	{background-color: #ebebd7;}
+
+/* ------- board ------- */
+.cmt_basic .cmt_unit.best_cmt	{background-color: #fdf5f5; border-bottom: 1px solid #f9e1e1;}
+.cmt_basic .best_cmt .cmt_buttons .bt	{background-color: #f3ebeb;}
+
+.cmt_bubble .my_cmt .cmt_body	{background-color: #fcf8e3;}
+.cmt_bubble .best_cmt .cmt_body	{background-color: #fdf5f5;}
+
+.atc_authorD .authorD_nav button.active,
+.cmt_title .bt_cmt_write button:hover	{color: #222;}
+
+.list_wrap .list_summary,
+.list_icon.updated,
+.atc_file li>a,
+.atc_vote .bt_blame,
+.cmt_member_only i,
+.sticker_pack>ul>li a,
+.sticker_pack .bt_module a	{color: #444;}
+
+.ldw .list_info,
+.ldw .list_info a,
+.ink_gallery .list_info,
+.ink_gallery .list_info a,
+.atc_authorD .authorD_nav button,
+.write_ex .ip>p,
+.memo_form_dummy .bt_write_memo,
+.cmt_title .bt_cmt_write button,
+.cmt_buttons .bt_wrap .bt,
+.cmt_buttons .cmt_vote .bt_blame,
+.cmt_ip,
+.cmt_ip a	{color: #666;}
+
+.list_wrap .title_link:visited,
+.list_wrap .secret_icon,
+.send_msg .send_success i,
+.atc_authorD .fa-comment-dots,
+.memo_form_dummy i,
+.cmt_notice i,
+.cmt_unit .secret_icon,
+.cmt_body .parent,
+.cmt_write_option .bt_write_type i,
+.cmt_rating_wrap .rating_text		{color: #888;}
+
+.ink_rating::after,
+.ldw .list_thumb>a,
+.ink_gallery .list_thumb .no_image>i,
+.cmt_rating	{color: #DDD;}
+
+.ink_board .xe_content pre	{background-color: #FFF;}
+
+.paging .bt_page,
+.list_wrap .extra_table th,
+.ldw .list_unit,
+.ink_gallery .list_thumb,
+.atc_history .history_date,
+.atc_ex th,
+.ink_memo .list_wrap .inkpf,
+.memo_form_dummy .bt_write_memo,
+.cmt_title,
+.cmt_notice,
+.cmt_bubble .cmt_body,
+.cmt .page_line,
+.cmt_basic .cmt_buttons .bt,
+.cmt_write_input textarea,
+.stk_display	{background-color: #f7f7f7;}
+.atc_ip a	{border-bottom: 1px solid #f7f7f7;}
+.cmt_not_permitted	{border: 5px solid #f7f7f7;}
+.write_option_color .ii	{background-color: #f7f7f7 !important;}
+
+.list_wrap .secret_icon,
+.ldw .list_thumb>a,
+.atc_tags a,
+.atc_file li>a,
+.atc_file_list .file_icon.on,
+.atc_file_list .file_count,
+.atc_vote .bt_blame,
+.cmt_member_only p,
+.cmt_unit .secret_icon,
+.sticker_pack>ul>li a	{background-color: #EEE;}
+.list_wrap .extra_table	{border: 3px solid #EEE;}
+.ldf .list_unit,
+.atc_who.show h3,
+.cmt_basic .cmt_unit,
+.cmt_basic .page_line,
+.cmt_basic .cmt_prev	{border-bottom: 1px solid #EEE;}
+.atc_history .history_content	{border: 5px dashed #EEE;}
+.atc_ex th,
+.atc_ex td	{border: 1px solid #EEE;}
+.atc_tags a::before	{border-right: 12px solid #EEE;}
+.memo_form_dummy .bt_editor	{border-left: 1px solid #EEE;}
+.memo_atc .cmt,
+.cmt_member_only,
+.cmt_basic .cmt_wrap.has_top .cmt_unit:first-of-type,
+.ldn tbody tr:not(.notice)	{border-top: 1px solid #EEE;}
+.cmt_page .bt_cmt_prev	{border: 5px solid #EEE;}
+.cmt_bubble .page_line	{height: 10px; border-bottom: 1px solid #EEE; border-top: 1px solid #EEE;}
+
+.ink_board .xe_content pre	{border: 1px solid #e5e5e5;}
+.list_wrap .extra_table th,
+.list_wrap .extra_table td	{border-bottom: 1px solid #e5e5e5;}
+.list_wrap .extra_table th	{border-right: 1px solid #e5e5e5;}
+.ldw .list_summary,
+.ldf .list_body,
+.write_ex .ip>p	{border-top: 1px dotted #e5e5e5;}
+.atc_file_list li	{border-bottom: 1px dotted #e5e5e5;}
+
+.list_icon.updated	{background-color: #DDD;}
+.atc_vote .bt_blame .voted_count	{border-left: 1px solid #DDD;}
+
+.atc_vote .bt_blame.submitted .voted_count	{border-left-color: #AAA;}
+
+.atc_file .file_count,
+.atc_vote .bt_blame.submitted,
+.bt_report .declared_count	{background-color: #999;}
+.cmt_unit .cmt_buttons .cmt_vote .bt_blame.submitted	{background-color: #999 !important;}
+
+/* ------- member ------- */
+.document_title a:hover	{color: #222;}
+
+.mb_table td	{color: #666;}
+
+.mb_header .ink_bubble_wrap a,
+.mb_list .list_info,
+.mb_list .list_info a,
+.document_title a,
+.mb_signup .help-block,
+.letter_list .list_body.readed,
+.mb_friend .friend_date,
+.comment_date,
+.letter_date,
+.mb_agreement .agreement_box ol>li::after	{color: #999;}
+
+.mb_message>i,
+.mb_signup .help-block i,
+.letter_list .state.readed	{color: #BBB;}
+
+.comment_content,
+.mb_login .keep_msg,
+.letter_list .list_body,
+.mb_signup>h3	{background-color: #f7f7f7;}
+.comment_content::after		{border-top: 5px solid #f7f7f7; border-left: 5px solid #f7f7f7;}
+
+.mb_content .top_bt_area,
+.mb_table tr,
+.mb_list>ul>li,
+.letter_list>ul	{border-bottom: 1px solid #EEE;}
+.mb_table th	{border-right: 1px solid #EEE;}
+.mb_agreement .agreement_title,
+.mb_agreement .agreement_box	{border: 1px solid #EEE;}
+.letter_list>ul>li,
+.ink_message .letter_content .inner	{border-top: 1px solid #EEE;}
+
+.comment_vote .blamed_count	{background-color: #999;}
+
+/* ------- widget ------- */
+.box_rank .list_rank,
+.wn .box_rank .list_rank,
+.pr_item_del,
+.ink_rank .count	{color: #999;}
+
+.ws_text.full .list_full .inne	{color: #666;}
+
+.mymenu_edit .empty	{color: #BBB;}
+
+.w_list .list_thumb .no_thumb	{color: #DDD;}
+.pr_item_del,
+.pr_item_add	{border: 1px dotted #DDD;}
+
+.w_list .list_thumb .no_thumb	{background-color: #f7f7f7;}
+
+.box_rank .list_rank	{background-color: #EEE;}
+
+.mb_list .list_info>span::after	{background-color: #DDD;}
+
+/* ------- etc ------- */
+.mb_sns .mb_table th	{border-bottom: 3px double #EEE;}
+.mb_sns .mb_table td	{border-right: 1px solid #EEE;}
+.sticker_notice	{background-color: #f7f7f7;}
+.sticker_notice .notice_icon	{color: #BBB;}

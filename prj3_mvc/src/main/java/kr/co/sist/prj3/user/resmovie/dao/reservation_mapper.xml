@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.reservationMapper">
+
+<select id="selectMovie" resultType="kr.co.sist.prj3.user.resmovie.domain.ReserveMovieDomain">
+
+select		m_title, m_num, rank
+from		movie
+where    open_date is not null
+
+</select>
+
+<select id="selectMovieInfo" resultType="kr.co.sist.prj3.user.resmovie.domain.ReserveMovieDomain" parameterType="Integer">
+select		open_date, end_date
+from		movie
+where		m_num=#{ m_num }
+</select>
+
+<select id="selectMovieHour" resultType="kr.co.sist.prj3.user.resmovie.domain.ReserveMovieDomain" parameterType="Integer">
+select		release_hour
+from		movie
+where		m_num=#{ m_num }
+</select>
+
+<select id="selectSeatsInfo" resultType="kr.co.sist.prj3.user.resmovie.domain.SeatsDomain" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationInfoVO">
+select		h_seat, v_seat
+from		seats
+where		m_num=#{m_num} and watch_date=#{ watch_date } and start_time=#{ start_time }
+</select>
+
+<select id="selectResMovie" resultType="kr.co.sist.prj3.user.resmovie.domain.ReserveMovieDomain" parameterType="Integer">
+select		poster, m_title
+from		movie
+where		m_num=#{m_num}
+</select>
+
+<select id="selectResKey" resultType="Integer">
+select seq_reservation.nextval from dual
+</select>
+
+<insert id="insertReservation" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationVO">
+insert into reservation(r_num, m_num, watch_date, people, input_date, price, user_id, r_state) values(#{r_num}, #{m_num}, #{watch_date}, #{people}, sysdate, #{price}, #{user_id}, 'Y')
+</insert>
+
+<insert id="insertSeats" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationVO">
+insert into seats(s_num, r_num, m_num, watch_date, h_seat, v_seat, start_time) values(seq_seat.nextval, #{r_num}, #{m_num}, #{watch_date}, #{h_seat}, #{v_seat}, #{start_time})
+</insert>
+
+<select id="selectResSeat" resultType="Integer" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationVO">
+select count(h_seat)
+from   seats
+where  m_num=#{m_num}
+</select>
+
+
+<select id="selectTime" resultType="Integer" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationVO">
+SELECT REGEXP_COUNT(release_hour, ',') + 1 AS value_count
+FROM movie
+WHERE m_num = #{m_num}
+</select>
+
+<select id="selectPeriod" resultType="Integer" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationVO">
+SELECT TO_NUMBER(SUBSTR(end_date, -2)) - TO_NUMBER(SUBSTR(open_date, -2)) AS result
+FROM movie
+where m_num=#{m_num}
+</select>
+
+<update id="insertRate" parameterType="kr.co.sist.prj3.user.resmovie.vo.ReservationVO">
+update movie
+set		  r_rate=#{r_rate}
+where  m_num=#{m_num}
+</update>
+
+
+</mapper>

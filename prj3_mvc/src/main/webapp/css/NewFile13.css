@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* ------- layout ------- */
+.ib_monoC:hover,
+.ib_monoC:hover i.only,
+a.c_module2:hover,
+button.c_module2:hover,
+.open_mode .ink_gnb a:hover,
+.sidebar_menu a:hover>span,
+.ink_sidebar .sidebar_menu .active .fa-folder,
+.ink_sidebar .sidebar_menu .active .fa-folder-open,
+.board_name2 .inner:hover	{color: #222;}
+.sbToggleOpen + .sbSelector	{color: #222 !important;}
+.ink_link2	{border-bottom: 1px solid #41bc99;}
+.nav_wrap.color_nav,
+.view_mode.color_nav .ink_gnb,
+.normal_mode.color_nav .menu_1depth,
+.nav_wrap .mymenu_title,
+.nav_wrap.color_nav.fixed	{background-color: #222 !important;}
+.view_mode.color_nav .ink_gnb>ul>li,
+.view_mode.color_nav .ink_gnb .menu_1depth	{border-color: #393939;}
+
+.open_mode .active>.menu_2depth	{color: #ec5e5e;}
+
+.ib_monoC:hover,
+.sidebar_menu a:hover>span	{background-color: #e5e5e5;}
+.board_name2 .inner:hover,
+.sbToggleOpen + .sbSelector	{background-color: #e5e5e5 !important;}
+
+.ib_color::before	{background-color: #de4646;}
+.board_name .inner:hover	{background-color: #222;}
+
+.ink_footer_wrap	{background-color: #222;}
+.ink_footer, .ink_footer a	{color: #a7a7a7;}
+.ink_footer .footer_2nd	{border-top: 1px solid #393939;}
+.bt_footer_link	{border: 3px solid #393939;}
+.footer_box	{background-color: #181818;}
+.footer_box li	{border-bottom: 1px solid #303030;}
+
+/* ------- board ------- */
+.list_wrap .cmt_num	{color: #ec5e5e;}
+.list_wrap .cmt_num.updated	{border-bottom: 1px solid #ec5e5e;}
+.list_wrap .list_icon2.youtube	{background-color: #ec5e5e;}
+
+.atc_vote .bt_vote:hover	{background-color: #ec5e5e;}
+.atc_vote .bt_vote:hover .voted_count	{border-left-color: #ef7676;}
+.cmt_unit .cmt_buttons .cmt_vote .bt_vote:hover	{background-color: #ec5e5e; color: #FFF;}
+
+.list_wrap .list_icon2.image	{background-color: #41bc99;}
+.xe_content a,
+.atc_ex td a	{border-bottom: 1px solid #41bc99;}
+
+.cmt_basic .cmt_ctrl a	{color: #222;}
+.cmt_basic .cmt_ctrl a:hover,
+.list_wrap .link_board_edit:hover	{border-bottom-color: #222;}
+
+/* ------- member ------- */
+.ink_member .cmt_num	{color: #ec5e5e;}
+.mb_set::before,
+.mb_set::after	{background-color: #DDD;} /* b8daca */
+.is_signup::after	{background: linear-gradient(#5c6785, #a9d1be);}
+
+/* ------- widget ------- */
+.w_list .cmt_num.updated	{border-bottom: 1px solid #ec5e5e;}
+.ws_text .list_rank	{color: #222;}
+.ws_text .swiper-pagination-bullet-active	{background-color: #222;}
+
+/* ------- etc ------- */

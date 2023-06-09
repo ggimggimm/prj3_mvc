@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.prj3.Mapper"><!--여러 매퍼에 같은 아이디를 만들 수 있음-->
+
+<!--댓글등록  -->
+<insert id="insertComment" parameterType="comm">
+insert into comments (com_num, input_date, content, rv_num, user_id) 
+values (seq_comment.nextval, to_char(sysdate, 'yyyy-mm-dd hh24:mi'), 
+ #{content}, #{rv_num}, #{user_id})
+</insert>
+
+<!--대댓글 등록 -->
+<insert id="insertReply" parameterType="reply">
+insert into reply (rp_num, input_date, content, com_num, user_id)
+values (seq_reply.nextval, to_char(sysdate, 'yyyy-mm-dd hh24:mi'), 
+#{content} , #{com_num}, #{user_id})
+</insert>
+
+<!-- 댓글 조회 -->
+<select id="selectComment" parameterType="Integer" resultType="kr.co.sist.prj3.user.comment.domain.AllDomain">
+SELECT
+    r.rv_num,
+    c.com_num,
+    c.user_id AS c_user_id,
+    u3.nick_name AS c_nick_name,
+    u3.profile AS c_profile,
+    c.input_date AS c_input_date,
+    c.content AS c_content,
+    rp.rp_num,
+    rp.user_id AS r_user_id,
+    u2.nick_name AS r_nick_name,
+    u2.profile AS r_profile,
+    rp.input_date AS r_input_date,
+    rp.content AS r_content
+FROM
+    review r
+    JOIN user_table u ON r.user_id = u.user_id
+    JOIN comments c ON c.rv_num = r.rv_num
+    LEFT JOIN reply rp ON rp.com_num = c.com_num
+    LEFT JOIN user_table u2 ON u2.user_id = rp.user_id
+    LEFT JOIN user_table u3 ON u3.user_id = c.user_id
+WHERE
+    r.rv_num = #{rv_num}
+ORDER BY
+    c.com_num, rp.rp_num
+</select>
+
+<!-- 대댓글 조회 -->
+<select id="selectReply" parameterType="Integer" resultType="kr.co.sist.prj3.user.comment.domain.AllDomain">
+SELECT
+    r.rv_num,
+    c.com_num,
+    c.user_id AS c_user_id,
+    u.nick_name AS c_nick_name,
+    u.profile AS c_profile,
+    c.input_date AS c_input_date,
+    c.content AS c_content,
+    rp.rp_num,
+    rp.user_id AS r_user_id,
+    u2.nick_name AS r_nick_name,
+    u2.profile AS r_profile,
+    rp.input_date AS r_input_date,
+    rp.content AS r_content
+FROM
+    review r
+    JOIN user_table u ON r.user_id = u.user_id
+    JOIN comments c ON c.rv_num = r.rv_num
+    LEFT JOIN reply rp ON rp.com_num = c.com_num
+    LEFT JOIN user_table u2 ON u2.user_id = rp.user_id
+WHERE
+    r.rv_num = #{rv_num}
+ORDER BY
+    c.com_num, rp.rp_num
+</select>
+
+<update id="updateComm" parameterType="Integer">
+update comments
+set input_date = null,
+    content = null
+where com_num = #{rp_num} 
+</update>
+
+<update id="updateReply" parameterType="Integer">
+update reply
+set input_date = null,
+    content = null
+where rp_num = #{rp_num} 
+</update>
+
+</mapper>
